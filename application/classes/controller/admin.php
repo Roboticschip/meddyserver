@@ -22,7 +22,7 @@ class Controller_Admin extends Controller_Template {
 		
 	public function action_index()
 	{	
-		$this->response->body('hello, world!');
+		$this->response->body('hello, meddy!');
 	}
 	
 	public function action_updateLocaleSpreadsheet(){

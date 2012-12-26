@@ -1,7 +1,7 @@
-drop database `gyanikaundatabase`;
-CREATE SCHEMA `gyanikaundatabase`;
-create database `gyanikaundatabase`;
-use `gyanikaundatabase`;
+drop database `meddydatabase`;
+CREATE SCHEMA `meddydatabase`;
+create database `meddydatabase`;
+use `meddydatabase`;
 
  DROP TABLE IF EXISTS `introduction`;
  DROP TABLE IF EXISTS `introductions`;
@@ -34,6 +34,30 @@ CREATE TABLE `questionbanks` (
   KEY `package_id` (`package_id`)
   );
   
+DROP TABLE IF EXISTS `city`;
+DROP TABLE IF EXISTS `citys`;
+CREATE TABLE `citys` (
+  `city_id` int unsigned NOT NULL ,
+  `name` varchar(200) DEFAULT NULL,
+  `soft_deleted` boolean DEFAULT FALSE,
+  `version` int(11) DEFAULT '0',
+  PRIMARY KEY (`city_id`)
+  );
+  
+DROP TABLE IF EXISTS `localitys`;
+DROP TABLE IF EXISTS `localitys`;
+CREATE TABLE `localitys` (
+  `locality_id` int unsigned NOT NULL ,
+  `name` varchar(200) DEFAULT NULL,
+  `pincode` int(20) DEFAULT '0',
+  `city_id` int unsigned DEFAULT NULL ,
+  `soft_deleted` boolean DEFAULT FALSE,
+  `version` int(11) DEFAULT '0',
+  PRIMARY KEY (`locality_id`),
+    KEY `city_id` (`city_id`)
+  );
+  
+  
   DROP TABLE IF EXISTS `userdetails`;
   CREATE TABLE `userdetails` (
   `user_id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -42,29 +66,7 @@ CREATE TABLE `questionbanks` (
   PRIMARY KEY (`user_id`)
   );
   
-  DROP TABLE IF EXISTS `user_states`;
-  CREATE TABLE `user_states` (
-  `state_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int DEFAULT NULL,
-  `package_id` int DEFAULT NULL,
-  `sublevel_id` int DEFAULT NULL,
-  `level_id` int DEFAULT NULL,
-   `version` int(11) DEFAULT '0',
-  PRIMARY KEY (`state_id`),
-  KEY `user_id` (`user_id`)
-  );
-  
-  DROP TABLE IF EXISTS `user_package_collections`;
-  CREATE TABLE `user_package_collections` (
-  `collection_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int unsigned NOT NULL,
-  `package_id` int DEFAULT NULL,
-   `version` int(11) DEFAULT '0',
-  PRIMARY KEY (`collection_id`),
-  KEY `user_id` (`user_id`),
-  KEY `package_id` (`package_id`)
-  );
-  
+
   DROP TABLE IF EXISTS `packages`;
   CREATE TABLE `packages` (
   `package_id` int unsigned NOT NULL,
@@ -73,16 +75,4 @@ CREATE TABLE `questionbanks` (
   PRIMARY KEY (`package_id`)
   )ENGINE=Innodb DEFAULT CHARSET=latin1;
   
-  DROP TABLE IF EXISTS `user_pointeres`;
-  CREATE TABLE `user_pointeres` (
-  `pointer_id` int unsigned NOT NULL AUTO_INCREMENT,
-    `user_id` int unsigned NOT NULL,
-	`package_id` int DEFAULT NULL,
-	`level_id` int DEFAULT NULL,
-   `headpointer` int DEFAULT NULL,
-     `version` int(11) DEFAULT '0',
-  PRIMARY KEY (`pointer_id`),
-    KEY `user_id` (`user_id`),
-  KEY `package_id` (`package_id`)
-  );  
-  
+

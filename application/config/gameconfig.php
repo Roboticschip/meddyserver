@@ -26,9 +26,9 @@ return array(
 
 
 if(empty($db_name))
-	$db_name = 'gyanikaundatabase';
+	$db_name = 'meddydatabase';
 if(empty($sheet_name))
-	$sheet_name = 'gyanikaun-sheet';
+	$sheet_name = 'meddy-sheet';
 if (empty($game_id))
 	$game_id = 4;
 	
@@ -44,8 +44,8 @@ return array(
 							'PopularityCap', 'MiscDownload', 'CrossPromoGame', 'SaleItem', 'Collection', 'LpProbability', 'LpCost', 'SocialGift', 
 							'GameRoomEvent', 'GameRoomProbability', 'FeatureProperty', 'StarterPack', 'GenericPopupItem', 'FaqItem',
 							'BabynatorProbability', 'DiscountedPlan', 'BundleSale', 'Theme', 'SlotRoomParameter', 'SpinnerParameter'*/),
-	'ss_username'	=> 'sudhanshu.manjeet@gmail.com',
-	'ss_password'	=> 'prematma',
+	'ss_username'	=> 'roboticschip@gmail.com',
+	'ss_password'	=> 'r0b0tics',
 	'ss_name'		=> $sheet_name,
 	'ss_assets'		=> $sheet_name,
 	'sync_asset_states' => array(),
@@ -59,7 +59,7 @@ return array(
 	'gameresponse_class'	=> 'com.kiwi.backend.GameResponse',
 	'connect_ad_networks' => FALSE,
 	'notify_ad_networks' => TRUE,
-	'admin_sync_models_before_assets'       => array('Package','Questionbank'),//,'Resource', 'AssetCategory', 'RoomAnimation', 'FeatureProperty', 'StarterPack'),
+	'admin_sync_models_before_assets'       => array('Citys'),//,'Resource', 'AssetCategory', 'RoomAnimation', 'FeatureProperty', 'StarterPack'),
     'admin_sync_models_after_assets'        => array(),/*'GameParam', 'Plan', 'Quest', 'QuestTask', 'Level', 'DailyBonus', 
     												'PopularityCap', 'InitialUserAsset', 'MiscDownload', 'CrossPromoGame',
     												 'Collection', 'FaqItem', 'BabynatorProbability', 'SlotRoomParameter', 'SpinnerParameter'),*/

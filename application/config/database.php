@@ -7,7 +7,7 @@ return array
         'type'       => 'mysql',
         'connection' => array(
             'hostname'   => 'localhost',
-            'database'   => 'gyanikaundatabase',
+            'database'   => 'meddydatabase',
             'username'   => 'root',
             'password'   => 'root',
             'persistent' => FALSE,

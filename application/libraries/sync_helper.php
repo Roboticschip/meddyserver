@@ -46,11 +46,27 @@ function sync_before(){
 
  function sync_extra_sheets($mainsheet, $version){
  	
- 	$mainsheet->useWorksheet('Packages');
- /*	$row = array("package_id" => "John Doe"
- 			,"package_name" => "john@example.com");
- 	if ($mainsheet->addRow($row)) echo "Form data successfully stored using Google Spreadsheet";
- 	else echo "Error, unable to store spreadsheet data";  */
+ 	$mainsheet->useWorksheet('Citys');
+ 	$rows = $mainsheet->getRows();
+ 	//print_r($rows);
+ 	foreach($rows as $values){
+ 		//print_r($values);
+ 		$tu = Model_City::create_or_update($values['cityid'], $values['name'], $version, $updated_classes);
+ 	}
+ 	
+ 	$mainsheet->useWorksheet('Localitys');
+ 	$rows = $mainsheet->getRows();
+ 	//print_r($rows);
+ 	foreach($rows as $values){
+ 		//print_r($values);
+ 		$tu = Model_Locality::create_or_update($values['localityid'], $values['name'], $values['pincode'], $values['cityid'], $version, $updated_classes);
+ 	}
+ 	
+ /* 	$mainsheet->useWorksheet('Packages');
+ //	$row = array("package_id" => "John Doe"
+ //			,"package_name" => "john@example.com");
+ //	if ($mainsheet->addRow($row)) echo "Form data successfully stored using Google Spreadsheet";
+ //	else echo "Error, unable to store spreadsheet data";  
 	$rows = $mainsheet->getRows();
 	//print_r($rows);
 	foreach($rows as $values){
@@ -67,7 +83,7 @@ function sync_before(){
 		$tu = Model_Questionbank::create_or_update($values['questid'], $values['question'], $values['optiona'], $values['optionb'], $values['optionc'], $values['optiond'],
 	 		$values['answer'], $values['solution'], $values['resources'], $values['packageid'], $values['levelid'], $version, $updated_classes);
 	}
-	
+	 */
 	
 	
 	$unique_updated_classes = array();
