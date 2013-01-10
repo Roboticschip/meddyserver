@@ -1,0 +1,114 @@
+body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    font-family: Verdana,Helvetica,Calibri,sans-serif;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+#login {
+	margin: 0 auto;
+
+
+	background: url("login.png") no-repeat 100% top;
+    cursor: pointer;
+
+    height: 30px;
+    width: 994px;
+
+}
+
+#logo {
+	background-image: url("logo.png");
+	margin: 35px auto 20px;
+    height: 94px;
+    width: 377px;
+}
+
+#menu {
+    background-color: rgb(0, 174, 239) no-repeat;
+    background-image: url("menu.png") ;
+	width: 994px;
+	height: 44px;
+	margin: 0 auto;
+}
+
+#search-box {
+	background-color: #B2DFED;
+    margin: 0 auto 75px auto;
+	height: 66px !important;
+	width: 655px;
+}
+#search-input input {
+    border: 3px solid #A7A9AC !important;
+    color: #BCBEC0 !important;
+    float: left !important;
+    font-family: Verdana,Arial,Calibri,sans-serif;
+	margin: 10px 0 10px 10px;
+    font-size: 18px !important;
+    height: 40px !important;
+    padding: 0 0px 0px 10px !important;
+    width: 525px !important;
+    z-index: 15;
+}
+#search-button {
+    background: url("go.png");
+	margin: 10px 0 10px 10px;
+    cursor: pointer;
+    float: left;
+    height: 46px;
+    width: 81px;
+}
+#search-button:hover {
+    background: url("gohover.png");
+	margin: 10px 0 10px 10px;
+    cursor: pointer;
+    float: left;
+    height: 46px;
+    width: 81px;
+}
+
+#cart {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 20000;
+    background: #FFFDE3 url("cart.png") no-repeat 10px 50%;
+	border: 2px solid #CCC;
+    cursor: pointer;
+    float: right;
+    height: 70px;
+	margin: 5px;
+    width: 170px;
+}
+#cart:hover {
+	border: 2px solid #F7941E;
+}
+#carttext {
+    margin: 10px 0 10px 70px;
+}
+
+#has {
+	    background: url("dot.png") no-repeat scroll 7px 50% #999;
+        background-size: auto auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 20000;
+	border: 2px;
+	border-bottom-width:0;
+	border-color:#666;
+	border-style: solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+    cursor: pointer;
+    float: right;
+    height: 25px;
+	margin: 0 5px 0 0;
+    width: 220px;
+}
+#hastext {
+    margin: 5px auto 5px 25px;
+	text-decoration:none;
+	font-size:12px;
+}

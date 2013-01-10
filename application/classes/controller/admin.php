@@ -14,6 +14,9 @@ class Controller_Admin extends Controller_Template {
 			}elseif ($this->request->action() == "sync"){
 				$this->template = 'syncConfirmation';
 			}/* @author manjeet*/
+			elseif ($this->request->action() == "home"){
+				$this->template = 'home';
+			}/* @author manjeet*/
 			elseif ($this->request->action() == "pushNotificationAll"){
 				$this->template = 'pushNotificationAll';
 			}
@@ -23,6 +26,13 @@ class Controller_Admin extends Controller_Template {
 	public function action_index()
 	{	
 		$this->response->body('hello, meddy!');
+	}
+	
+	public function action_home()
+	{
+		$view = new View('home'); // loads the 'article/index.php' file under 'application/view' folder
+	//	$view->set("data","Add Question : ");
+		$this->response->body($view); // render the  view as response
 	}
 	
 	public function action_updateLocaleSpreadsheet(){
